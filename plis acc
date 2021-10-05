@@ -1,0 +1,10 @@
+<?php
+ if(isset($_GET['a'])) $a=$_GET["a"]; //echo $a;
+ if($a==1) echo "previous info/repeat";
+ if($a==2) echo "different item from same category";
+ if($a==3) echo "different item from different category";
+ $con=mysqli_connect("localhost","id17543566_ssip2021","Ssip2021111-","id17543566_ssip");
+ $res=mysqli_query($con,"SELECT uname FROM los WHERE id='$a'");
+ $row=mysqli_fetch_array($res); 
+ echo "<br><br>".$row['uname'];
+?>
